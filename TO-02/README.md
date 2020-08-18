@@ -1,4 +1,5 @@
 # Warehouse Management System
+END - Of - Deadline
 Sadar masih sangat berantakan :D
 ## Package
 - [x] nodemon (dev)
