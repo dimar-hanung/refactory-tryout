@@ -5,7 +5,7 @@ const port = 3000;
 
 // const rootIndex = require("./src/routes/index");
 const routerUsers = require("./src/routes/users");
-// const routerPost = require("./src/routes/posts");
+const routerProduct = require("./src/routes/products");
 // const routerComment = require("./src/routes/comment");
 
 app.use(
@@ -19,8 +19,8 @@ app.use(bodyParser.json());
 // })
 
 // app.use("/", rootIndex);
-app.use("/users", routerUsers);
-// app.use("/posts", routerPost);
+app.use("/user", routerUsers);
+app.use("/product", routerProduct);
 // app.use("/comments", routerComment);
 
 app.listen(port, () => {
