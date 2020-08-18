@@ -1,5 +1,5 @@
 # Warehouse Management System
-
+Sadar masih sangat berantakan :D
 ## Package
 - [x] nodemon (dev)
 - [x] sequelize
@@ -10,6 +10,12 @@
 - [x] mysql2
 - [x] dotenv
 - [ ] puppetear
+
+## just test ( belum di implementasi )
+- [x] Nodemailers 
+- [x] Queue
+- [x] make pdf
+
 ## Main Task
 
 - [x] Use Migrations
@@ -19,8 +25,7 @@
 - [x] RESTful Product IN
 - [x] RESTful Product Out
 - [x] Relational REST product, product_in, product_out
-
-- [ ] Tiap request Body, harus di dalam variable data
+- [x] Tiap request Body, harus di dalam variable data (baru sebagian)
   ```json
   {
     "data": {
@@ -29,7 +34,7 @@
     }
   }
   ```
-- [ ] Tiap Response body harus memiliki data,message dan status, untuk data yang bentuknya daftar/list, di kasih pagination
+- [x] Tiap Response body harus memiliki data,message dan status, untuk data yang bentuknya daftar/list, di kasih pagination ( baru sebgaian )
   ```json
   {
     "message": "succes get data",
@@ -40,7 +45,7 @@
     }
   }
   ```
-  dengan paginasi :
+  -[ ] dengan paginasi :
   ```json
   {
       "message":"succes get data",
@@ -56,10 +61,10 @@
       }
   }
   ```
-- [ ] gunakan base url dengan `api/{version}/:http://localhost/api/{version}`
+- [x] gunakan base url dengan `api/{version}/:http://localhost/api/{version}`
   - http://localhost:5000/api/v1/user
   - http://localhost:5000/api/v1/product
 - [ ] Cloudinary - simpan foto
-- [x] NodeMailer - kirim email
+- [ ] NodeMailer - kirim email
 - [ ] gunakan `queue` untuk membuat laporan bulanan total dari barang masuk dan barang keluar dan di cetak dalam format pdf dan di kirim ke email pemilik setiap akhir bulan
 - [ ] gunakan `authentication` untuk akses resource data , jika tidak ada, maka tidak bisa akses ke server, kecuali url untuk login dan register
