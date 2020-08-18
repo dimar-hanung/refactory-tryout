@@ -1,5 +1,14 @@
 # Warehouse Management System
 
+## Package
+- [x] nodemon (dev)
+- [x] sequelize
+- [x] sequelize-cli
+- [x] express
+- [x] nodemailer
+- [x] passport-jwt
+- [x] mysql2
+- [ ] puppetear
 ## Main Task
 
 - [ ] Use Migrations
