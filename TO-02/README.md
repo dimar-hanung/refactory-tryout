@@ -8,6 +8,7 @@
 - [x] nodemailer
 - [x] passport-jwt
 - [x] mysql2
+- [x] dotenv
 - [ ] puppetear
 ## Main Task
 
