@@ -45,10 +45,8 @@
   }
   ```
 - [ ] gunakan base url dengan `api/{version}/:http://localhost/api/{version}`
-
   - http://localhost:5000/api/v1/user
   - http://localhost:5000/api/v1/product
-
 - [ ] Cloudinary - simpan foto
 - [ ] NodeMailer - kirim email
 - [ ] gunakan `queue` untuk membuat laporan bulanan total dari barang masuk dan barang keluar dan di cetak dalam format pdf dan di kirim ke email pemilik setiap akhir bulan
