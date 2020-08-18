@@ -66,30 +66,30 @@ class globalFunction {
     const productout = await product_in.findAll();
 
     console.log(productin[0].product.user.id);
-    
 
-    cron.schedule("*/10 * * * * *", async function () {
-      // var docDefinition = {
-      //     content: [
-      //       {
-      //         layout: 'lightHorizontalLines', // optional
-      //         table: {
-      //           // headers are automatically repeated if the table spans over multiple pages
-      //           // you can declare how many rows should be treated as headers
-      //           headerRows: 1,
-      //           widths: [ '*', 'auto', 100, '*' ],
-      //           body: [
-      //             [ 'nama produk', 'pemasukan', 'pengeluaran'],
-      //             [ 'Value 1', 'Value 2', 'Value 3', 'Value 4' ],
-      //             [ { text: 'Bold value', bold: true }, 'Val 2', 'Val 3', 'Val 4' ]
-      //           ]
-      //         }
-      //       }
-      //     ]
-      //   };
-      //   var pdfDoc = printer.createPdfKitDocument(docDefinition);
-      //   pdfDoc.pipe(fs.createWriteStream('document.pdf'));
-      //     pdfDoc.end();
+
+    cron.schedule("0 0 1 * *", async function () {
+      var docDefinition = {
+          content: [
+            {
+              layout: 'lightHorizontalLines', // optional
+              table: {
+                // headers are automatically repeated if the table spans over multiple pages
+                // you can declare how many rows should be treated as headers
+                headerRows: 1,
+                widths: [ '*', 'auto', 100, '*' ],
+                body: [
+                  [ 'nama produk', 'pemasukan', 'pengeluaran'],
+                  [ 'Value 1', 'Value 2', 'Value 3', 'Value 4' ],
+                  [ { text: 'Bold value', bold: true }, 'Val 2', 'Val 3', 'Val 4' ]
+                ]
+              }
+            }
+          ]
+        };
+        var pdfDoc = printer.createPdfKitDocument(docDefinition);
+        pdfDoc.pipe(fs.createWriteStream('document.pdf'));
+          pdfDoc.end();
     });
   }
 
