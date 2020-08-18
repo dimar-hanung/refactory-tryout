@@ -18,6 +18,8 @@
 - [x] RESTful Products
 - [x] RESTful Product IN
 - [x] RESTful Product Out
+- [x] Relational REST product, product_in, product_out
+
 - [ ] Tiap request Body, harus di dalam variable data
   ```json
   {
@@ -58,6 +60,6 @@
   - http://localhost:5000/api/v1/user
   - http://localhost:5000/api/v1/product
 - [ ] Cloudinary - simpan foto
-- [ ] NodeMailer - kirim email
+- [x] NodeMailer - kirim email
 - [ ] gunakan `queue` untuk membuat laporan bulanan total dari barang masuk dan barang keluar dan di cetak dalam format pdf dan di kirim ke email pemilik setiap akhir bulan
 - [ ] gunakan `authentication` untuk akses resource data , jika tidak ada, maka tidak bisa akses ke server, kecuali url untuk login dan register

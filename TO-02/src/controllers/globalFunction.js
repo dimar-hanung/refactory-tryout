@@ -1,7 +1,22 @@
 const cron = require("node-cron");
 const nodemailer = require("nodemailer");
 const { Op } = require("sequelize");
-const { products } = require("../db/models");
+const { products, product_out, product_in, users } = require("../db/models");
+var fs = require("fs");
+
+// Define font files
+var fonts = {
+  Roboto: {
+    normal: "src/fonts/Roboto-Regular.ttf",
+    bold: "src/fonts/Roboto-Medium.ttf",
+    italics: "src/fonts/Roboto-Italic.ttf",
+    bolditalics: "src/fonts/Roboto-MediumItalic.ttf",
+  },
+};
+
+var PdfPrinter = require("pdfmake");
+var printer = new PdfPrinter(fonts);
+
 class globalFunction {
   static isObject(obj) {
     return Object.keys(obj).length === 0 && obj.constructor === Object
@@ -30,12 +45,51 @@ class globalFunction {
           })
           .then((data) => data.map((data) => data.name));
         console.log("sukses kirim email", data);
-        await globalFunction
-          .sendStockMessage(data, "dimarhanung@gmail.com")
-          .then(console.log("success send email", new Date()));
+        // await globalFunction
+        //   .sendStockMessage(data, "dimarhanung@gmail.com")
+        //   .then(console.log("success send email", new Date()));
       }
       console.log(notSpam);
       notSpam--;
+    });
+  }
+
+  static async reportMonth() {
+    const productin = await product_in.findAll({
+      include: [
+        {
+          model: products,
+          include: [users],
+        },
+      ],
+    });
+    const productout = await product_in.findAll();
+
+    console.log(productin[0].product.user.id);
+    
+
+    cron.schedule("*/10 * * * * *", async function () {
+      // var docDefinition = {
+      //     content: [
+      //       {
+      //         layout: 'lightHorizontalLines', // optional
+      //         table: {
+      //           // headers are automatically repeated if the table spans over multiple pages
+      //           // you can declare how many rows should be treated as headers
+      //           headerRows: 1,
+      //           widths: [ '*', 'auto', 100, '*' ],
+      //           body: [
+      //             [ 'nama produk', 'pemasukan', 'pengeluaran'],
+      //             [ 'Value 1', 'Value 2', 'Value 3', 'Value 4' ],
+      //             [ { text: 'Bold value', bold: true }, 'Val 2', 'Val 3', 'Val 4' ]
+      //           ]
+      //         }
+      //       }
+      //     ]
+      //   };
+      //   var pdfDoc = printer.createPdfKitDocument(docDefinition);
+      //   pdfDoc.pipe(fs.createWriteStream('document.pdf'));
+      //     pdfDoc.end();
     });
   }
 

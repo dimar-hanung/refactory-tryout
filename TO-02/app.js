@@ -10,6 +10,7 @@ const routerProduct = require("./src/routes/products");
 const routerIn = require("./src/routes/product-in");
 const routerOut = require("./src/routes/product-out");
 
+run.reportMonth()
 run.checkStock()
 app.use(
   bodyParser.urlencoded({
@@ -22,10 +23,10 @@ app.use(bodyParser.json());
 // })
 
 // app.use("/", rootIndex);
-app.use("/user", routerUsers);
-app.use("/product", routerProduct);
-app.use("/In", routerIn);
-app.use("/Out", routerOut);
+app.use("/api/v1/user", routerUsers);
+app.use("/api/v1/product", routerProduct);
+app.use("/api/v1/In", routerIn);
+app.use("/api/v1/Out", routerOut);
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);

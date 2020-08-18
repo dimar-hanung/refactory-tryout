@@ -1,4 +1,4 @@
-const { products, product, comment } = require("../db/models");
+const { products, product_in, product_out,users } = require("../db/models");
 const run = require("./globalFunction");
 const response = {
   status: true,
@@ -13,7 +13,7 @@ class ProductController {
     } = req;
     //   console.log(limit,page)
 
-    const data = await products.findAll();
+    const data = await products.findAll({include: [users]});
     response.data = data;
     response.message = "Succes get product data";
 
