@@ -12,7 +12,7 @@
 - [ ] puppetear
 ## Main Task
 
-- [ ] Use Migrations
+- [x] Use Migrations
 - [ ] Use Controller
 - [ ] RESTful User
 - [ ] RESTful Products
