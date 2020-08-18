@@ -13,11 +13,11 @@
 ## Main Task
 
 - [x] Use Migrations
-- [ ] Use Controller
-- [ ] RESTful User
-- [ ] RESTful Products
-- [ ] RESTful Product IN
-- [ ] RESTful Product Out
+- [x] Use Controller
+- [x] RESTful User
+- [x] RESTful Products
+- [x] RESTful Product IN
+- [x] RESTful Product Out
 - [ ] Tiap request Body, harus di dalam variable data
   ```json
   {
